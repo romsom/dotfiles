@@ -86,3 +86,6 @@
 (menu-bar-mode -1)
 ;; enable linum-mode
 (global-linum-mode t)
+
+;; set indent style
+(setq c-default-style "linux")
