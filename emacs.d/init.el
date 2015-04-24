@@ -29,7 +29,12 @@
 (ac-config-default)
 ; start yasnippets - snippets like main, while with condition etc.
 (require 'yasnippet)
-(yas-global-mode 1)
+;; don't make it global or tab-completion in term won't work
+;(yas-global-mode 1)
+(yas-reload-all)
+(add-hook 'prog-mode 'yas-minor-mode)
+(add-hook 'ess-mode 'yas-minor-mode)
+
 (defun my:ac-c-header-init()
   (require  'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
@@ -89,3 +94,8 @@
 
 ;; set indent style
 (setq c-default-style "linux")
+
+;;;; OrgMode Options
+;; fontify code in code blocks
+(setq org-src-fontify-natively t)
+(put 'erase-buffer 'disabled nil)
