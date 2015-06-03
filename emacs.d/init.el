@@ -93,9 +93,14 @@
 (global-linum-mode t)
 
 ;; set indent style
-(setq c-default-style "linux")
+(setq c-default-style "linux"
+      c-basic-offset 4)
 
 ;;;; OrgMode Options
-;; fontify code in code blocks
+;; fontify code in code blocks a.k.a. syntax highlighting in code blocks
 (setq org-src-fontify-natively t)
 (put 'erase-buffer 'disabled nil)
+
+;;;; evil mode
+(require 'evil)
+(evil-mode 1)
