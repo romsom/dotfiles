@@ -1,4 +1,4 @@
-; inhibit welcome stuff
+;inhibit welcome stuff
 ;(setq inhibit-startup-echo-area-message t)
 ;(setq inhibit-startup-message t)
 ; printing stuff
@@ -7,8 +7,7 @@
 (pr-update-menus)
 
 ;font
-(set-face-attribute 'default nil :font "monospace")
-(set-face-attribute 'default nil :height 90)
+(load "~/.emacs.d/init-font.el")
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
