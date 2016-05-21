@@ -168,3 +168,8 @@ bar {
 ## my own keybinds:
 
 bindsym $mod+Shift+s exec i3lock && systemctl suspend -i
+bindsym $mod+Shift+o exec i3lock
+
+## fix behaviour of pdfpc
+
+for_window [instance="pdfpc"] floating enable
