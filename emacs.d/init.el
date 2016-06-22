@@ -6,8 +6,14 @@
 (require 'printing)
 (pr-update-menus)
 
-;font
+;; font
 (load "~/.emacs.d/init-font.el")
+
+;; company
+(load "~/.emacs.d/init-company.el")
+
+;; settings for info mode
+(load "~/.emacs.d/init-info.el")
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -22,10 +28,10 @@
 ; initialize package mode
 (package-initialize)
 ; start auto-complete wit emacs: this completes statements like 'while'
-(require 'auto-complete)
+;(require 'auto-complete)
 ; default config for auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
+;(require 'auto-complete-config)
+;(ac-config-default)
 ; start yasnippets - snippets like main, while with condition etc.
 (require 'yasnippet)
 ;; don't make it global or tab-completion in term won't work
@@ -34,35 +40,35 @@
 (add-hook 'prog-mode 'yas-minor-mode)
 (add-hook 'ess-mode 'yas-minor-mode)
 
-(defun my:ac-c-header-init()
-  (require  'auto-complete-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'achead:include-directories '"/usr/include")
-)
-(add-hook 'c++-mode-hook 'my:ac-c-header-init)
-(add-hook 'c-mode-hook 'my:ac-c-header-init)
+;(defun my:ac-c-header-init()
+;  (require  'auto-complete-c-headers)
+;  (add-to-list 'ac-sources 'ac-source-c-headers)
+;  (add-to-list 'achead:include-directories '"/usr/include")
+;)
+;(add-hook 'c++-mode-hook 'my:ac-c-header-init)
+;(add-hook 'c-mode-hook 'my:ac-c-header-init)
 ; keybinding for iedit mode
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
 ; turn on CEDET semantic mode
-(semantic-mode 1)
+;(semantic-mode 1)
 ; set semantic as a backend for auto-complete:
 ; define a function which adds semantic as a suggestion backend to ac
 ; and hook this function to c-mode-common-hook
-(defun my:add-semantic-to-autocomplete()
-  (add-to-list 'ac-sources 'ac-source-semantic)
-)
-(add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
+;(defun my:add-semantic-to-autocomplete()
+;  (add-to-list 'ac-sources 'ac-source-semantic)
+;)
+;(add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
 
 
 ; latex math ac
-(require 'ac-math)
-(add-to-list 'ac-modes 'latex-mode)
+;(require 'ac-math)
+;(add-to-list 'ac-modes 'latex-mode)
 
-(defun my:ac-math-init()
-  (require 'ac-math)
-  (add-to-list 'ac-sources '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands))
-)
-(add-hook 'latex-mode-hook 'my:ac-math-init)
+;(defun my:ac-math-init()
+;  (require 'ac-math)
+;  (add-to-list 'ac-sources '(ac-source-math-unicode ac-source-math-latex ac-source-latex-commands))
+;)
+;(add-hook 'latex-mode-hook 'my:ac-math-init)
 ; latex preview pane
 (require 'latex-preview-pane)
 (custom-set-variables
