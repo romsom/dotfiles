@@ -15,10 +15,14 @@
 
 ;; set font and size
 (defun reset-font (&optional scaling-factor)
+  (interactive)
   (let ((found-font (get-preferred-font)))
     (when found-font
+      (if scaling-factor
+	  (setq font-scaling-factor scaling-factor)
+	(setq font-scaling-factor 1.0))
       (let ((font-name (car found-font)) (font-size (cdr found-font)))
-	(set-face-attribute 'default nil :font font-name :height (if scaling-factor (round (* scaling-factor font-size)) font-size))))))
+	 (set-face-attribute 'default nil :font font-name :height (round (* font-scaling-factor font-size)))))))
 
 (defun font-scale-scaling (&optional factor)
   (prog1
@@ -36,9 +40,7 @@
 
 (define-key global-map (kbd "C-+") 'font-increase-scaling)
 (define-key global-map (kbd "C--") 'font-decrease-scaling)
-;;(define-key global-map (kbd "C-=") (lambda () (progn (setq font-scaling-factor 1.0)
-						    ;;(reset-font font-scaling-factor))))
+(define-key global-map (kbd "C-=") 'reset-font)
 
 ;; default font scaling:
-(setq font-scaling-factor 1.0)
-(reset-font font-scaling-factor)
+(reset-font)
