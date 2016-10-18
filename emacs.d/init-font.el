@@ -13,22 +13,34 @@
       (pop fontlist))
     (car fontlist)))
 
-;; set font and size
+;; set font and size to default values
 (defun reset-font (&optional scaling-factor)
   (interactive)
   (let ((found-font (get-preferred-font)))
     (when found-font
+      (setq font-preferred-font found-font)
       (if scaling-factor
 	  (setq font-scaling-factor scaling-factor)
 	(setq font-scaling-factor 1.0))
-      (let ((font-name (car found-font)) (font-size (cdr found-font)))
-	 (set-face-attribute 'default nil :font font-name :height (round (* font-scaling-factor font-size)))))))
+      (font-apply-font)
+      )))
 
+;; apply scaling from font-scaling-factor
+(defun font-apply-scaling (&optional scaling-factor)
+  (let ((font-size (cdr font-preferred-font)))
+    (set-face-attribute 'default nil :height (round (* font-scaling-factor font-size)))))
+
+;; apply font from font-preferred-font and scaling from font-scaling-factor
+(defun font-apply-font ()
+  (let ((font-name (car font-preferred-font)) (font-size (cdr font-preferred-font)))
+    (set-face-attribute 'default nil :font font-name :height (round (* font-scaling-factor font-size)))))
+
+;; scale font-scaling-factor with factor
 (defun font-scale-scaling (&optional factor)
   (prog1
       (setq font-scaling-factor
 	    (* font-scaling-factor factor))
-    (reset-font font-scaling-factor)))
+    (font-apply-scaling)))
 
 (defun font-increase-scaling ()
   (interactive)
