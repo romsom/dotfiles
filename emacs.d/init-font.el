@@ -55,4 +55,5 @@
 (define-key global-map (kbd "C-=") 'reset-font)
 
 ;; default font scaling:
-(reset-font)
+(when (window-system)
+  (reset-font))
