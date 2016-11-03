@@ -1,4 +1,9 @@
 ;; package
+
+;; prevent package from adding this line here again
+;;(package-initialize)
+;; will be called in init-package.el
+
 (load "~/.emacs.d/init-package.el")
 
 ;; font
@@ -9,6 +14,9 @@
 
 ;; settings for info mode
 (load "~/.emacs.d/init-info.el")
+
+;; settings for linux coding style, loaded in specific directories
+(load "~/.emacs.d/init-linux.el")
 
 ;; auto-complete
 ;;(load "~/.emacs.d/init-ac.el")
