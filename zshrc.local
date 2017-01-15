@@ -1,0 +1,40 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000000000000000
+SAVEHIST=10000000000000000
+# options don't mind uc/lc and '_'
+setopt incappendhistory autocd hist_ignore_space
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/etxzat/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+## make termite work with colors, taken from archwiki:termite
+eval $(dircolors ~/.dircolors)
+source /etc/profile.d/vte.sh
+
+## Config
+export EDITOR=vim
+
+alias lftp-get='lftp -u romsom -e "mirror -e; exit"'
+alias lftp-put='lftp -u romsom -e "mirror -e -R; exit"'
+
+alias steam='~/Repo/romsom/scripts/fix-steam.sh && /usr/bin/steam'
+
+function shush()
+sleep $1 && systemctl suspend
+
+
+function sp-mode() {
+    export _SP_SVN_PATH="${HOME}/Repo/sp-svn"
+    export PATH="${_SP_SVN_PATH}/ueb/bin:${PATH}"
+    export _SP_HOST=faui00c.cs.fau.de
+}
+
+function bluon() {
+	echo "power on" | bluetoothctl
+}
