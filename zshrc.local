@@ -24,6 +24,7 @@ alias lftp-get='lftp -u romsom -e "mirror -e; exit"'
 alias lftp-put='lftp -u romsom -e "mirror -e -R; exit"'
 
 alias steam='~/Repo/romsom/scripts/fix-steam.sh && /usr/bin/steam'
+alias winesteam='WINEPREFIX=~/.winesteam wine ~/.winesteam/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe'
 
 function shush()
 sleep $1 && systemctl suspend
@@ -38,3 +39,17 @@ function sp-mode() {
 function bluon() {
 	echo "power on" | bluetoothctl
 }
+
+function benq19() {
+	xrandr --output HDMI-1 --off
+	xrandr --output VGA-1 --mode 1280x1024 --right-of LVDS-1
+}
+
+function wget-all() {
+	local url="$2"
+	local ext="$1"
+	wget --accept "$ext" --mirror --progress=bar --adjust-extension --convert-links --backup-converted --no-parent "$url"
+}
+
+# set color of username in prompt to green; see grml_zshrc
+zstyle ':prompt:grml:*:items:user' pre '%F{blue}'
