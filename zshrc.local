@@ -14,7 +14,9 @@ compinit
 # End of lines added by compinstall
 
 ## make termite work with colors, taken from archwiki:termite
-eval $(dircolors ~/.dircolors)
+if [[ -f ~/.dircolors ]] ; then
+    eval $(dircolors ~/.dircolors)
+fi
 source /etc/profile.d/vte.sh
 
 ## Config
