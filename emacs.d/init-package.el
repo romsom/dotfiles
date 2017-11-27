@@ -22,3 +22,6 @@
   (seq-sort 'string-lessp
 	    (seq-filter 'package-built-in-p
 			(seq-map (lambda(a) (elt a 0)) package-alist))))
+
+;; to install missing packages run (package-install-selected-packages)
+;; a package list will be saved in custom variable package-selected-packages

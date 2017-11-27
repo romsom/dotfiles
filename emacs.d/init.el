@@ -64,7 +64,7 @@
      (:name "Uni" :query "folder:Uni"))))
  '(package-selected-packages
    (quote
-    (markdown-mode rust-mode faust-mode flycheck flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust sphinx-doc sphinx-mode company-web yaxception yaml-mode qml-mode pkgbuild-mode php-mode org-journal org-caldav notmuch monokai-theme mediawiki lua-mode log4e latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode dokuwiki-mode company-jedi company-arduino cdlatex ac-math)))
+    (faustine markdown-mode rust-mode faust-mode flycheck flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
  '(pdf-latex-command "xelatex")
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
@@ -145,6 +145,6 @@
 (evil-mode 1)
 
 ;; printing stuff
-;;(setq ps-lpr-switches '("-PKM_Bizhub"))
-;;(require 'printing)
-;;(pr-update-menus)
+(setq ps-lpr-switches '("-PLaserjet4k-10"))
+(require 'printing)
+(pr-update-menus)
