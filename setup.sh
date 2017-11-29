@@ -31,5 +31,5 @@ for f in "${DOTFILES[@]}"; do
     # create link with '.' prefixed
     echo "$f --> $HOME/.$f"
     rm -f "$HOME/.$f"
-    ln -s "$f" "$HOME/.$f"
+    ln -s "$PWD/$f" "$HOME/.$f"
 done
