@@ -2,8 +2,10 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import qualified XMonad.StackSet as W
 
+import XMonad.Util.EZConfig -- for keybindings
+
 -- The main function.
-main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
+main = xmonad =<< (statusBar myBar myPP toggleStrutsKey $ myKeybindings myConfig)
 
 -- Command to launch the bar.
 myBar = "xmobar"
@@ -22,6 +24,10 @@ myConfig = def
        , workspaces = ["1:term", "2:edit", "3:web", "4:mail"] ++ map show [5 .. 9 :: Int]
        , manageHook = myManageHook <+> manageHook def -- uses default to
        }
+
+myKeybindings = \c -> additionalKeysP c $
+  [ ("M-S-s", spawn "i3lock && systemctl suspend")
+  ]
 
 -- manage workspaces
 myManageHook :: ManageHook
