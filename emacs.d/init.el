@@ -1,32 +1,3 @@
-;; package
-
-;; prevent package from adding this line here again
-;;(package-initialize)
-;; will be called in init-package.el
-
-(load "~/.emacs.d/init-package.el")
-
-;; font
-(load "~/.emacs.d/init-font.el")
-
-;; company
-(load "~/.emacs.d/init-company.el")
-
-;; settings for info mode
-(load "~/.emacs.d/init-info.el")
-
-;; load flycheck, needed for init-linux.el
-(require 'flycheck)
-
-;; settings for linux coding style, loaded in specific directories
-(load "~/.emacs.d/init-linux.el")
-
-;; auto-complete
-;;(load "~/.emacs.d/init-ac.el")
-
-;; yasnippet
-;(load "~/.emacs.d/init-yasnippet.el")
-
 ;; set custom-safe-themes before loading monokai
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -98,6 +69,36 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; package
+
+;; prevent package from adding this line here again
+;;(package-initialize)
+;; will be called in init-package.el
+
+(load "~/.emacs.d/init-package.el")
+
+;; font
+(load "~/.emacs.d/init-font.el")
+
+;; company
+(load "~/.emacs.d/init-company.el")
+
+;; settings for info mode
+(load "~/.emacs.d/init-info.el")
+
+;; load flycheck, needed for init-linux.el
+(require 'flycheck)
+
+;; settings for linux coding style, loaded in specific directories
+(load "~/.emacs.d/init-linux.el")
+
+;; auto-complete
+;;(load "~/.emacs.d/init-ac.el")
+
+;; yasnippet
+;(load "~/.emacs.d/init-yasnippet.el")
+
 
 ;;;; look and feel
 
