@@ -1,6 +1,6 @@
 #!/bin/bash
 PWD=$(pwd)
-DIRS=( emacs.d i3 )
+DIRS=( emacs.d i3 xmonad )
 
 # find config directories in home and replace config files with symlinks to repo
 for dir in "${DIRS[@]}"; do
@@ -17,9 +17,19 @@ for dir in "${DIRS[@]}"; do
   echo "dir: $link_dir"
   for file in "$dir"/*; do
     if [[ -f "$file" ]]; then
-      echo "$file"
+      echo "$link_dir/$(basename "$file")"
      rm -f "$link_dir"/$(basename "$file")
      ln -s "$PWD"/"$file" "$link_dir"/$(basename "$file")
     fi
   done
+done
+
+echo "linking single config/rc files"
+# dotfiles
+DOTFILES=( zshrc.local xmobarrc )
+for f in "${DOTFILES[@]}"; do
+    # create link with '.' prefixed
+    echo "$f --> $HOME/.$f"
+    rm -f "$HOME/.$f"
+    ln -s "$f" "$HOME/.$f"
 done
