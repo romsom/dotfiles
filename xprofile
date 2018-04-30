@@ -1,0 +1,15 @@
+#!/bin/bash
+
+firefox &
+# spawn 3 terms
+termite --class 'termite-main' &
+termite --class 'termite-main' &
+termite --class 'termite-main' &
+# emacs
+emacs -name emacs-main &
+# mail
+termite --class 'termite-mutt' --exec=/usr/bin/neomutt &
+setxkbmap us -variant altgr-intl -option ctrl:swapcaps &
+
+feh --bg-fill /usr/share/backgrounds/gnome/Stones.jpg &
+#exec xmonad
