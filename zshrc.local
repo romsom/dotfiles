@@ -27,6 +27,7 @@ alias lftp-put='lftp -u romsom -e "mirror -e -R; exit"'
 
 alias steam='~/Repo/romsom/scripts/fix-steam.sh && /usr/bin/steam'
 alias winesteam='WINEPREFIX=~/.winesteam wine ~/.winesteam/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe'
+alias studiomanager='dex ~/.local/share/applications/wine/Programs/Yamaha\ Studio\ Manager/Studio\ Manager.desktop'
 
 function shush()
 sleep $1 && systemctl suspend
@@ -51,6 +52,10 @@ function wget-all() {
 	local url="$2"
 	local ext="$1"
 	wget --accept "$ext" --mirror --progress=bar --adjust-extension --convert-links --backup-converted --no-parent "$url"
+}
+
+function qr() {
+	qrencode -s6 -o- "$1" | feh -
 }
 
 # set color of username in prompt to green; see grml_zshrc
