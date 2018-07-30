@@ -4,7 +4,7 @@
 ;;; Code:
 ;; files in those directories will be handled as linux sources
 (setq linux:linux-sources '("/srv/scratch/jo55toko/passt/linux-stable"
-			    "~/Repo/linux-stable"))
+			    "~/Repo/Linux"))
 
 (defun linux:linux-source-p (filename)
   "True if FILENAME is inside one of the paths in linux:linux-sources."
@@ -37,7 +37,7 @@
 	  (lambda ()
 	    (let ((filename (buffer-file-name)))
 	      ;; Enable kernel mode for the appropriate files
-	      (when (linux:linux-source-p(filename))
+	      (when (linux:linux-source-p filename)
 		(setq indent-tabs-mode t)
 		(setq show-trailing-whitespace t)
 		(c-set-style "linux-tabs-only")))))
