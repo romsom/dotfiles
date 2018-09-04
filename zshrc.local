@@ -25,11 +25,16 @@ export EDITOR=vim
 alias lftp-get='lftp -u romsom -e "mirror -e; exit"'
 alias lftp-put='lftp -u romsom -e "mirror -e -R; exit"'
 
+alias lssmb='smbtree -b -N'
+
 alias steam='~/Repo/romsom/scripts/fix-steam.sh && /usr/bin/steam'
 alias winesteam='WINEPREFIX=~/.winesteam wine ~/.winesteam/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe'
 alias studiomanager='dex ~/.local/share/applications/wine/Programs/Yamaha\ Studio\ Manager/Studio\ Manager.desktop'
 
 alias eac='WINEPREFIX=~/Wineprefixes/eac wine "C:\\Program Files (x86)\\Exact Audio Copy\\EAC.exe"'
+
+alias tvon='xrandr --output VGA-1 --off --output LVDS-1 --primary --output HDMI-1 --mode 1920x1080 --left-of LVDS-1'
+alias tvoff='xrandr --output HDMI-1 --off --output VGA-1 --primary --mode 1920x1200 --left-of LVDS-1'
 
 function shush()
 sleep $1 && systemctl suspend
@@ -45,6 +50,10 @@ function bluon() {
 	echo "power on" | bluetoothctl
 }
 
+function blumidi() {
+	echo "connect F3:1F:3C:D5:F7:67" | bluetoothctl
+}
+
 function benq19() {
 	xrandr --output HDMI-1 --off
 	xrandr --output VGA-1 --mode 1280x1024 --right-of LVDS-1
@@ -58,6 +67,27 @@ function wget-all() {
 
 function qr() {
 	qrencode -s6 -o- "$1" | feh -
+}
+
+function kodi.vga() {
+    sed -ibak -e 's|<monitor>.*</monitor>|<monitor>VGA-1</monitor>|' ~/.kodi/userdata/guisettings.xml
+}
+
+function kodi.hdmi() {
+    sed -ibak -e 's|<monitor>.*</monitor>|<monitor>HDMI-1</monitor>|' ~/.kodi/userdata/guisettings.xml
+}
+
+function zrename() {
+    filename="$1"
+    target_pattern="$2"
+    target_filename=$(echo "$filename" | sed -e"$target_pattern" -)
+    if [ "$target_filename" = "$filename" ]; then
+	echo "Pattern \"$target_pattern\" did not match, not renaming"
+    elif [ "$target_filename" = "" ]; then
+	echo "Pattern \"$target_pattern\" will result in empty filename, not renaming"
+    else
+	echo "$filename" " -> " "$target_filename"
+    fi
 }
 
 # set color of username in prompt to green; see grml_zshrc
