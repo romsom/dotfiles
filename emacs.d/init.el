@@ -92,7 +92,7 @@
 
 ;; settings for linux coding style, loaded in specific directories
 (load "~/.emacs.d/init-linux.el")
-
+(load "~/.emacs.d/kconfig-mode.el")
 ;; auto-complete
 ;;(load "~/.emacs.d/init-ac.el")
 
