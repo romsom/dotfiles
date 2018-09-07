@@ -16,7 +16,7 @@
 	  (or p (string-match (expand-file-name elt) filename)))
 	linux:linux-sources nil)))
 
-(defun c-lineup-arglist-tabs-only ()
+(defun c-lineup-arglist-tabs-only (ignored)
   "Line up argument lists by tabs, not spaces."
   (let* ((anchor (c-langelem-pos c-syntactic-element))
 	 (column (c-langelem-2nd-pos c-syntactic-element))
@@ -24,6 +24,7 @@
 	 (steps (floor offset c-basic-offset)))
     (* (max steps 1)
        c-basic-offset)))
+    
 
 (add-hook 'c-mode-common-hook
 	  (lambda ()
