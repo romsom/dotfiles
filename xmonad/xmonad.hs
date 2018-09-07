@@ -27,6 +27,7 @@ myConfig = def
 
 myKeybindings = \c -> additionalKeysP c $
   [ ("M-S-s", spawn "i3lock && systemctl suspend")
+  , ("M-S-l", spawn "i3lock -d -I5 ")
   ]
 
 -- manage workspaces
@@ -35,10 +36,10 @@ myManageHook = composeAll . concat $
     [ [ className   =? c                 --> doFloat | c <- myFloatsByClass]
     , [ title       =? t                 --> doFloat | t <- myFloatsByTitle]
     , [ resource    =? r                 --> doIgnore | r <- myIgnores]
-    , [ className   =? "termite-main"    --> doShift "1:term" ]
+    , [ title       =? "term-main"       --> doShift "1:term" ]
     , [ title       =? "emacs-main"      --> doShift "2:edit" ]
     , [ className   =? "Firefox"         --> doShift "3:web" ]
-    , [ className   =? "termite-mutt"    --> doShift "4:mail" ]
+    , [ className   =? "term-mutt"       --> doShift "4:mail" ]
     ]
     where
         myIgnores       = ["panel", "stalonetray", "trayer"] -- sticky, respect geometry
