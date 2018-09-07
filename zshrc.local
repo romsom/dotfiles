@@ -17,7 +17,9 @@ compinit
 if [[ -f ~/.dircolors ]] ; then
     eval $(dircolors ~/.dircolors)
 fi
-source /etc/profile.d/vte.sh
+if [[ -f /etc/profile.d/vte.sh ]]; then
+    source /etc/profile.d/vte.sh
+fi
 
 ## Config
 export EDITOR=vim
@@ -45,6 +47,11 @@ function sp-mode() {
     export PATH="${_SP_SVN_PATH}/ueb/bin:${PATH}"
     export _SP_HOST=faui00c.cs.fau.de
 }
+
+function passt() {
+    source ${HOME}/passt/passt-scripts/setup.sh
+}
+
 
 function bluon() {
 	echo "power on" | bluetoothctl
