@@ -1,15 +1,18 @@
 #!/bin/bash
 
-firefox &
+#firefox &
 # spawn 3 terms
 termite --class 'termite-main' &
 termite --class 'termite-main' &
 termite --class 'termite-main' &
 # emacs
-emacs -name emacs-main &
+#emacs -name emacs-main &
 # mail
-termite --class 'termite-mutt' --exec=/usr/bin/neomutt &
+#termite --class 'termite-mutt' --exec=/usr/bin/neomutt &
 setxkbmap us -variant altgr-intl -option ctrl:swapcaps &
-
+PATH="${HOME}/Repo/ebus_re/ebus_bridge:$PATH" "${HOME}/Repo/ebus_re/mididings/motif_map.py" &
 feh --bg-fill /usr/share/backgrounds/gnome/Stones.jpg &
+
+qjackctl &
+pavucontrol &
 #exec xmonad
