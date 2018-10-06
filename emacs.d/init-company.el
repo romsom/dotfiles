@@ -13,4 +13,4 @@
 ;; python notes
 ;; flycheck
 ;; flycheck-verify-setup checks install
-;; flake8 and pylint recommanded
+;; flake8 and pylint recommended
