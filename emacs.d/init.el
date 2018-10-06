@@ -100,6 +100,9 @@
 ;; yasnippet
 ;(load "~/.emacs.d/init-yasnippet.el")
 
+;; notmuch
+;;(setq notmuch-init-file "~/.emacs.d/init-notmuch.el")
+(load "~/.emacs.d/init-notmuch.el")
 
 ;;;; look and feel
 
