@@ -26,7 +26,7 @@ done
 
 echo "linking single config/rc files"
 # dotfiles
-DOTFILES=( zshrc.local xmobarrc xprofile )
+DOTFILES=( zshrc.local xmobarrc xprofile msmtprc )
 for f in "${DOTFILES[@]}"; do
     # create link with '.' prefixed
     echo "$f --> $HOME/.$f"
