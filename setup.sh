@@ -1,6 +1,6 @@
 #!/bin/bash
 PWD=$(pwd)
-DIRS=( emacs.d i3 xmonad )
+DIRS=( emacs.d i3 xmonad offlineimap )
 
 # find config directories in home and replace config files with symlinks to repo
 for dir in "${DIRS[@]}"; do
@@ -26,7 +26,7 @@ done
 
 echo "linking single config/rc files"
 # dotfiles
-DOTFILES=( zshrc.local xmobarrc xprofile msmtprc )
+DOTFILES=( zshrc.local xmobarrc xprofile offlineimaprc msmtprc )
 for f in "${DOTFILES[@]}"; do
     # create link with '.' prefixed
     echo "$f --> $HOME/.$f"

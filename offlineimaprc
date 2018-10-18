@@ -1,0 +1,42 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+
+[general]
+pythonfile = ~/.offlineimap/gopass.py
+accounts = ya, fau
+
+[Account fau]
+localrepository = FauLocal
+remoterepository = FauRemote
+postsynchook = notmuch new
+
+[Repository FauLocal]
+type = Maildir
+localfolders = ~/mail/fau
+
+[Repository FauRemote]
+type = IMAP
+remotehost = faumail.fau.de
+remoteuser = roman.sommer@fau.de
+remotepasseval = pass_from_gopass('faumail')
+starttls = yes
+ssl = yes
+sslcacertfile = /etc/ca-certificates/extracted/cadir/Deutsche_Telekom_Root_CA_2.pem
+
+[Account ya]
+localrepository = YaLocal
+remoterepository = YaRemote
+
+[Repository YaLocal]
+type = Maildir
+localfolders = ~/mail/ya
+
+[Repository YaRemote]
+type = IMAP
+remotehost = imap.mail.yahoo.com
+remoteuser = romsom2@yahoo.de
+remotepasseval = pass_from_gopass('yahoo')
+starttls = yes
+ssl = yes
+sslcacertfile = /etc/ca-certificates/extracted/email-ca-bundle.pem
+remoteport = 993
