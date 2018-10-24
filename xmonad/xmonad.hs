@@ -43,5 +43,8 @@ myManageHook = composeAll . concat $
     ]
     where
         myIgnores       = ["panel", "stalonetray", "trayer"] -- sticky, respect geometry
-        myFloatsByClass = ["feh", "GIMP", "gimp", "gimp-2.4", "kcalc", "qemu", "scummvm"] -- xprop WM_CLASS
+        myFloatsByClass = [ "feh", "GIMP", "gimp", "gimp-2.4", "kcalc"
+                          , "qemu", "qemu-system-aarch64"
+                          , "scummvm"
+                          ] -- xprop WM_CLASS
         myFloatsByTitle = [] 
