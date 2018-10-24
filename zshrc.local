@@ -99,3 +99,5 @@ function zrename() {
 
 # set color of username in prompt to green; see grml_zshrc
 zstyle ':prompt:grml:*:items:user' pre '%F{blue}'
+
+export CDPATH="$CDPATH:$HOME/Repo/BA:$HOME/Repo/"
