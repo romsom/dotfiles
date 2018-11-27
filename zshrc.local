@@ -44,6 +44,9 @@ alias gd='git diff'
 alias ga='git add'
 alias gc='git commit'
 
+# kvm utils
+alias rand-mac='printf 'DE:AD:BE:EF:%02X:%02X\n' $((RANDOM%256)) $((RANDOM%256))'
+
 function shush()
 sleep $1 && systemctl suspend
 
@@ -58,6 +61,9 @@ function passt() {
     source ${HOME}/passt/passt-scripts/setup.sh
 }
 
+function ba() {
+    source "${HOME}/Repo/BA/kafl-arm/scripts/ba.sh"
+}
 
 function bluon() {
 	echo "power on" | bluetoothctl
@@ -101,10 +107,6 @@ function zrename() {
     else
 	echo "$filename" " -> " "$target_filename"
     fi
-}
-
-function hikey-with-reset() {
-	picocom -b115200 --initstring "$(echo -ne 'm\n3\n9\n1\n1\n1\n1\na\n@\nP\n(1)\ny')" /dev/buspirate
 }
 
 # set color of username in prompt to green; see grml_zshrc
