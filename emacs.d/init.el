@@ -35,7 +35,7 @@
      (:name "Uni" :query "folder:Uni"))))
  '(package-selected-packages
    (quote
-    (company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
+    (dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
  '(pdf-latex-command "xelatex")
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
