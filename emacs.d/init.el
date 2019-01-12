@@ -89,7 +89,7 @@
 (load "~/.emacs.d/init-info.el")
 
 ;; load flycheck, needed for init-linux.el
-(require 'flycheck)
+(load "~/.emacs.d/init-flycheck.el")
 
 ;; settings for linux coding style, loaded in specific directories
 (load "~/.emacs.d/init-linux.el")
