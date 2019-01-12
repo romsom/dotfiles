@@ -18,15 +18,15 @@ for dir in "${DIRS[@]}"; do
   for file in "$dir"/*; do
     if [[ -f "$file" ]]; then
       echo "$link_dir/$(basename "$file")"
-     rm -f "$link_dir"/$(basename "$file")
-     ln -s "$PWD"/"$file" "$link_dir"/$(basename "$file")
+     rm -f "$link_dir/$(basename "$file")"
+     ln -s "$PWD"/"$file" "$link_dir/$(basename "$file")"
     fi
   done
 done
 
 echo "linking single config/rc files"
 # dotfiles
-DOTFILES=( zshrc.local xmobarrc xprofile offlineimaprc msmtprc )
+DOTFILES=( zshrc.local xmobarrc xprofile offlineimaprc msmtprc flake8 )
 for f in "${DOTFILES[@]}"; do
     # create link with '.' prefixed
     echo "$f --> $HOME/.$f"
