@@ -11,9 +11,8 @@ termite --class 'term-main' &
 # mail
 #termite --class 'term-mutt' --exec=/usr/bin/neomutt &
 setxkbmap us -variant altgr-intl -option ctrl:swapcaps &
-PATH="${HOME}/Repo/ebus_re/ebus_bridge:$PATH" "${HOME}/Repo/ebus_re/mididings/motif_map.py" &
 feh --bg-fill ~/Syncs/Wallpapers/Stones.jpg &
 
-qjackctl &
 pavucontrol &
+qjackctl &
 #exec xmonad
