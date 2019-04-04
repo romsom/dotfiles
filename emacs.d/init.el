@@ -35,7 +35,7 @@
      (:name "Uni" :query "folder:Uni"))))
  '(package-selected-packages
    (quote
-    (dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-checkpatch flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
+    (nlinum dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-checkpatch flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
  '(pdf-latex-command "xelatex")
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
@@ -118,7 +118,7 @@
 ;; disable menu-bar-mode
 (menu-bar-mode -1)
 ;; enable linum-mode
-(global-linum-mode t)
+(global-nlinum-mode t)
 ;; column-number-mode to show column number in bottom bar
 (column-number-mode)
 ;; highlight current line
