@@ -4,6 +4,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(c-basic-offset 4)
+ '(c-default-style
+   (quote
+	((java-mode . "java")
+	 (awk-mode . "awk")
+	 (other . "linux"))))
  '(compilation-message-face (quote default))
  '(custom-safe-themes
    (quote
@@ -40,6 +46,7 @@
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
  '(send-mail-function (quote sendmail-send-it))
+ '(tab-width 4)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
