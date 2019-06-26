@@ -21,7 +21,7 @@ remoteuser = roman.sommer@fau.de
 remotepasseval = pass_from_gopass('faumail')
 starttls = yes
 ssl = yes
-sslcacertfile = /etc/ca-certificates/extracted/cadir/Deutsche_Telekom_Root_CA_2.pem
+sslcacertfile = /etc/ca-certificates/extracted/cadir/T-TeleSec_GlobalRoot_Class_2.pem
 
 [Account ya]
 localrepository = YaLocal
