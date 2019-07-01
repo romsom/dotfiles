@@ -17,8 +17,13 @@ compinit
 if [[ -f ~/.dircolors ]] ; then
     eval $(dircolors ~/.dircolors)
 fi
-if [[ -f /etc/profile.d/vte.sh ]]; then
-    source /etc/profile.d/vte.sh
+if [[ "$TERM" == "xterm-termite" ]]; then
+	if [[ -f /etc/profile.d/vte.sh ]]; then
+		source /etc/profile.d/vte.sh
+		alias ssh='TERM=xterm ssh'
+	else
+		TERM=xterm; export TERM
+	fi
 fi
 
 ## Config
