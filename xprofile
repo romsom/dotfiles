@@ -13,4 +13,5 @@ termite --class 'term-mutt' --exec=/usr/bin/neomutt &
 setxkbmap us -variant altgr-intl -option ctrl:swapcaps &
 
 feh --bg-fill ~/Syncs/Wallpapers/Stones.jpg &
+xcompmgr &
 #exec xmonad

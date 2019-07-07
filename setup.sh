@@ -1,6 +1,6 @@
 #!/bin/bash
 PWD=$(pwd)
-DIRS=( emacs.d i3 xmonad offlineimap )
+DIRS=( emacs.d i3 xmonad offlineimap termite )
 
 # find config directories in home and replace config files with symlinks to repo
 for dir in "${DIRS[@]}"; do
