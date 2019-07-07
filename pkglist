@@ -1,0 +1,10 @@
+xmonad
+xmonad-contrib
+xmobar
+python{,2}-virtualenv
+mypy
+flake8
+shellcheck
+emacs
+termite
+xcompmgr
