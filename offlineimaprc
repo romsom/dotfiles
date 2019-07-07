@@ -3,12 +3,11 @@
 
 [general]
 pythonfile = ~/.offlineimap/gopass.py
-accounts = ya, fau
+accounts = kbr, fau, ya
 
 [Account fau]
 localrepository = FauLocal
 remoterepository = FauRemote
-postsynchook = notmuch new
 
 [Repository FauLocal]
 type = Maildir
@@ -26,6 +25,7 @@ sslcacertfile = /etc/ca-certificates/extracted/cadir/T-TeleSec_GlobalRoot_Class_
 [Account ya]
 localrepository = YaLocal
 remoterepository = YaRemote
+postsynchook = notmuch new
 
 [Repository YaLocal]
 type = Maildir
@@ -40,3 +40,20 @@ starttls = yes
 ssl = yes
 sslcacertfile = /etc/ca-certificates/extracted/email-ca-bundle.pem
 remoteport = 993
+
+[Account kbr]
+localrepository = kbrLocal
+remoterepository = kbrRemote
+
+[Repository kbrRemote]
+type = IMAP
+remotehost = imap.1blu.de
+remoteuser = c255302_0-initiative
+remotepasseval = pass_from_gopass('kunstbrauchtraum-initiative')
+starttls = yes
+ssl = yes
+sslcacertfile = /etc/ca-certificates/extracted/email-ca-bundle.pem
+
+[Repository kbrLocal]
+type = Maildir
+localfolders = ~/mail/kbr
