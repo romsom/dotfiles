@@ -15,12 +15,13 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , iconRoot = "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run Weather "EGPF" ["-t","<station>: <tempC>C",
-                                          "-L","18","-H","25",
-                                          "--normal","green",
-                                          "--high","red",
-                                          "--low","lightblue"] 36000
-                    , Run Network "enp0s25" ["-L","0","-H","32",
+       , commands = [
+           -- Run Weather "EGPF" ["-t","<station>: <tempC>C",
+           --                      "-L","18","-H","25",
+           --                      "--normal","green",
+           --                      "--high","red",
+           --                      "--low","lightblue"] 36000
+                    Run Network "ens2" ["-L","0","-H","32",
                                           "--normal","green","--high","red"] 10
                     , Run Network "wlp3s0" ["-L","0","-H","32",
                                           "--normal","green","--high","red"] 10
@@ -42,6 +43,6 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%StdinReader% }\
-                    \ <fc=#ee9a00>%date%</fc>|%EGPF%\
-                    \{ %cpu%|%memory% * %swap%|%enp0s25% - %wlp3s0%|%battery%"
+                    \ <fc=#ee9a00>%date%</fc>|\
+                    \{ %cpu%|%memory%|%ens2% - %ens3%|%battery%"
        }
