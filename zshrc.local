@@ -58,6 +58,7 @@ alias rand-mac='printf 'DE:AD:BE:EF:%02X:%02X\n' $((RANDOM%256)) $((RANDOM%256))
 # WINEPREFIX=~/Wineprefixes/titanquest winetricks d3dx9_36 as workaround for [[https://bugs.winehq.org/show_bug.cgi?id=24754]]
 alias titanquest='dex .local/share/applications/wine/Programs/GOG.com/Titan\ Quest\ -\ Anniversary\ Edition/Titan\ Quest\ -\ Anniversary\ Edition.desktop'
 alias opti_titanquest='optirun dex .local/share/applications/wine/Programs/GOG.com/Titan\ Quest\ -\ Anniversary\ Edition/Titan\ Quest\ -\ Anniversary\ Edition.desktop'
+alias thimbleweedpark='~/Games/Thimbleweed\ Park/start.sh'
 
 function shush()
 sleep $1 && systemctl suspend
@@ -124,4 +125,4 @@ function zrename() {
 # set color of username in prompt to green; see grml_zshrc
 zstyle ':prompt:grml:*:items:user' pre '%F{blue}'
 
-export CDPATH="$CDPATH:$HOME/Repo/BA:$HOME/Repo/"
+export CDPATH="$CDPATH:$HOME/Repo/BA:$HOME/Repo/romsom"
