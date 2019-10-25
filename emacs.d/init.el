@@ -4,12 +4,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(c-basic-offset 4)
+ '(c-default-style
+   (quote
+	((java-mode . "java")
+	 (awk-mode . "awk")
+	 (other . "linux"))))
  '(compilation-message-face (quote default))
  '(custom-safe-themes
    (quote
     ("c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "57f8801351e8b7677923c9fe547f7e19f38c99b80d68c34da6fa9b94dc6d3297" default)))
  '(doc-view-continuous t)
  '(fci-rule-color "#49483E")
+ '(flycheck-ghc-args (quote ("-dynamic")))
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
  '(highlight-tail-colors
    (quote
@@ -35,11 +42,12 @@
      (:name "Uni" :query "folder:Uni"))))
  '(package-selected-packages
    (quote
-    (dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-checkpatch flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
+	(smart-tabs-mode auctex helm helm-cscope nlinum dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-checkpatch flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
  '(pdf-latex-command "xelatex")
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
  '(send-mail-function (quote sendmail-send-it))
+ '(tab-width 4)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -118,17 +126,15 @@
 ;; disable menu-bar-mode
 (menu-bar-mode -1)
 ;; enable linum-mode
-(global-linum-mode t)
+(global-nlinum-mode t)
 ;; column-number-mode to show column number in bottom bar
 (column-number-mode)
 ;; highlight current line
 (global-hl-line-mode)
 ;; highlight matching parens
 (show-paren-mode)
-
-;; set indent style
-(setq c-default-style "linux"
-      c-basic-offset 4)
+;; activate smart-tabs-mode for certain languages
+(smart-tabs-insinuate 'c)
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
