@@ -34,7 +34,7 @@ alias lftp-put='lftp -u romsom -e "mirror -e -R; exit"'
 
 alias lssmb='smbtree -b -N'
 
-alias steam='MESA_GL_VERSION_OVERRIDE=4.5 STEAM_RUNTIME=0 /usr/bin/steam'
+alias steam='~/Repo/romsom/scripts/fix-steam.sh && /usr/bin/steam'
 alias winesteam='WINEPREFIX=~/.winesteam wine ~/.winesteam/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe'
 alias studiomanager='dex ~/.local/share/applications/wine/Programs/Yamaha\ Studio\ Manager/Studio\ Manager.desktop'
 
