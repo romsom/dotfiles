@@ -39,6 +39,7 @@ myManageHook = composeAll . concat $
     , [ title       =? "term-main"       --> doShift "1:term" ]
     , [ title       =? "emacs-main"      --> doShift "2:edit" ]
     , [ className   =? "Firefox"         --> doShift "3:web" ]
+    , [ className   =? "firefox"         --> doShift "3:web" ]
     , [ className   =? "term-mutt"       --> doShift "4:mail" ]
     ]
     where
