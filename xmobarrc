@@ -15,13 +15,7 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , iconRoot = "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [
-           -- Run Weather "EGPF" ["-t","<station>: <tempC>C",
-           --                      "-L","18","-H","25",
-           --                      "--normal","green",
-           --                      "--high","red",
-           --                      "--low","lightblue"] 36000
-                    Run Network "ens2" ["-L","0","-H","32",
+       , commands = [ Run Network "ens2" ["-L","0","-H","32",
                                           "--normal","green","--high","red"] 10
                     , Run Network "wlp3s0" ["-L","0","-H","32",
                                           "--normal","green","--high","red"] 10
