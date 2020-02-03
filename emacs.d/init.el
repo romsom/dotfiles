@@ -46,6 +46,8 @@
  '(pdf-latex-command "xelatex")
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
+ '(recentf-max-menu-items 25)
+ '(recentf-max-saved-items 25)
  '(send-mail-function (quote sendmail-send-it))
  '(tab-width 4)
  '(vc-annotate-background nil)
@@ -166,3 +168,14 @@
 (setq ps-lpr-switches '("-PLaserjet4k-10"))
 (require 'printing)
 (pr-update-menus)
+
+(recentf-mode 1)
+;; set variables in customize instead:
+;; (setq recentf-max-menu-items 25)
+;; (setq recentf-max-saved-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+;; timed actions
+(run-at-time nil (* 5 60) (lambda ()
+							(recentf-save-list)
+							(bookmark-save)))
