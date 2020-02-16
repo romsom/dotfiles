@@ -1,0 +1,29 @@
+[Unit]
+Description=JACK 2 dbus
+After=pulseaudio.service
+# Requires=dbus.socket # Not needed because type=dbus implies this
+Requires=pulseaudio.service
+
+[Service]
+Type=dbus
+BusName=org.jackaudio.service
+
+ExecStartPre=-/usr/bin/killall -9 jackdbus
+ExecStartPre=/usr/bin/sleep 1
+ExecStart=/usr/bin/jackdbus auto
+ExecStartPost=/usr/bin/sleep 2
+ExecStartPost=/usr/bin/pacmd set-default-sink jack_out
+ExecStartPost=/usr/bin/pacmd set-default-source jack_in
+ExecStartPost=/usr/bin/jack_control start
+ExecStartPost=/usr/bin/jack_wait -w
+
+
+ExecStop=/usr/bin/jack_control exit
+ExecStopPost=/usr/bin/sleep 5
+ExecStopPost=-/usr/bin/killall -9 jackdbus
+
+SuccessExitStatus=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
