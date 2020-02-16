@@ -47,6 +47,7 @@ myManageHook = composeAll . concat $
     , [ title       =? "term-main"       --> doShift "1:term" ]
     , [ title       =? "emacs-main"      --> doShift "2:edit" ]
     , [ className   =? "qjackctl"        --> doShift "3:qjackctl" ]
+    , [ className   =? "QjackCtl"        --> doShift "3:qjackctl" ]
     , [ className   =? "Pavucontrol"        --> doShift "3:qjackctl" ]
     , [ className   =? "ardour.*"         --> doShift "4:ardour" ]
     , [ title       =? "setBfree"        --> doShift "5:setbfree" ]

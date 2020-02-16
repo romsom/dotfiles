@@ -10,9 +10,11 @@ termite --class 'term-main' &
 #emacs -name emacs-main &
 # mail
 #termite --class 'term-mutt' --exec=/usr/bin/neomutt &
-setxkbmap us -variant altgr-intl -option ctrl:swapcaps &
+# setxkbmap us -variant altgr-intl -option ctrl:swapcaps &
+setxkbmap us -variant altgr-intl &
 feh --bg-fill ~/Syncs/Wallpapers/Stones.jpg &
 
 pavucontrol &
 qjackctl &
 #exec xmonad
+xrandr --output DVI-D-0 --mode 1280x1024 --primary --output DVI-I-1 --mode 1280x1024 --right-of DVI-D-0 &
