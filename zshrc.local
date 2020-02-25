@@ -122,6 +122,21 @@ function zrename() {
     fi
 }
 
+# Quick and easy file transfer via tcp.
+# Use only ever in trusted networks (e.g., between two machines at home)!
+# Everything you sent can be eavesdropped.
+
+function send-files() {
+	port="$1"
+	shift
+	tar -cf- "$@" | pv | nc -N -l 0.0.0.0 "$port" > /dev/null # We don't want the other side to paste stuff in our terminal, do we?
+}
+function recv-files() {
+	target_host="$1"
+	target_port="$2"
+	echo "Thanks!" | nc -N "$target_host" "$target_port" | pv | tar -xvf-
+}
+
 # set color of username in prompt to green; see grml_zshrc
 zstyle ':prompt:grml:*:items:user' pre '%F{blue}'
 
