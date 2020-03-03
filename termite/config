@@ -1,4 +1,4 @@
 [options]
 font = Monospace 9
 [colors]
-background = rgba(63, 63, 63, 0.8)
+background = rgba(5, 5, 5, 0.8)
