@@ -23,6 +23,9 @@ myConfig = def
        -- workspaces
        , workspaces = ["1:term", "2:edit", "3:web", "4:mail"] ++ map show [5 .. 9 :: Int]
        , manageHook = myManageHook <+> manageHook def -- uses default to
+       , normalBorderColor = "#000000"
+       , focusedBorderColor = "#002F00"
+       , borderWidth = 1
        }
 
 myKeybindings = \c -> additionalKeysP c $
