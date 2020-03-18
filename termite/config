@@ -1,4 +1,7 @@
 [options]
 font = Monospace 9
+# cursor_shape = block
+scrollback_lines = -1 # negative numbers -> infinite
+
 [colors]
 background = rgba(5, 5, 5, 0.8)
