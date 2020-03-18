@@ -21,7 +21,7 @@ myConfig = def
        { terminal   = "termite"
        , modMask    = mod4Mask
        -- workspaces
-       , workspaces = ["1:term", "2:edit", "3:web", "4:mail"] ++ map show [5 .. 9 :: Int]
+       , workspaces = ["1:term", "2:edit", "3:web", "4:mail", "5:games"] ++ map show [6 .. 7 :: Int] ++ ["8:media_players", "9:audio_controls"]
        , manageHook = myManageHook <+> manageHook def -- uses default to
        , normalBorderColor = "#000000"
        , focusedBorderColor = "#002F00"
@@ -39,6 +39,9 @@ myManageHook = composeAll . concat $
     [ [ className   =? c                 --> doFloat | c <- myFloatsByClass]
     , [ title       =? t                 --> doFloat | t <- myFloatsByTitle]
     , [ resource    =? r                 --> doIgnore | r <- myIgnores]
+    , [ className   =? g                 --> doShift "5:games" | g <- myGames]
+    , [ className   =? a                 --> doShift "9:audio_controls" | a <- myAudio_Controls]
+    , [ className   =? m                 --> doShift "8:media_players" | m <- myMedia_Players]
     , [ title       =? "term-main"       --> doShift "1:term" ]
     , [ title       =? "emacs-main"      --> doShift "2:edit" ]
     , [ className   =? "Firefox"         --> doShift "3:web" ]
@@ -52,3 +55,6 @@ myManageHook = composeAll . concat $
                           , "scummvm", "MediathekView"
                           ] -- xprop WM_CLASS
         myFloatsByTitle = [] 
+        myGames = ["Steam", "Lutris", "Gamehub", "multimc", "MultiMC5"]
+        myAudio_Controls = ["qjackctl", "QjackCtl", "pavucontrol", "Pavucontrol"]
+        myMedia_Players = ["Deadbeef", "deadbeef", "vlc"]
