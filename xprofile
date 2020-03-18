@@ -1,16 +1,14 @@
 #!/bin/bash
 
 firefox &
-# spawn 3 terms
+# spawn some terms
 termite --class 'term-main' &
 termite --class 'term-main' &
 termite --class 'term-main' &
 termite --class 'term-main' &
 # emacs
 emacs -name emacs-main &
-# mail
-termite --class 'term-mutt' --exec=/usr/bin/neomutt &
-setxkbmap us -variant altgr-intl -option ctrl:swapcaps &
+setxkbmap us -variant altgr-intl -option ctrl:nocaps &
 
 feh --bg-fill ~/Syncs/Wallpapers/Stones.jpg &
 xcompmgr &
