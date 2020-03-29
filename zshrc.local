@@ -137,6 +137,11 @@ function recv-files() {
 	echo "Thanks!" | nc -N "$target_host" "$target_port" | pv | tar -xvf-
 }
 
+# grep with colorized output in less
+function pg() {
+	grep --color=always $@ | less -R
+}
+
 # set color of username in prompt to green; see grml_zshrc
 zstyle ':prompt:grml:*:items:user' pre '%F{blue}'
 
