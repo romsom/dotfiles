@@ -146,3 +146,8 @@ function pg() {
 zstyle ':prompt:grml:*:items:user' pre '%F{blue}'
 
 export PATH="$PATH:${HOME}/Repo/romsom/scripts"
+
+function fomu() {
+	export PATH="${HOME}/Camp/fomu/fomu-toolchain-linux_x86_64-v1.3/bin:$PATH"
+	cd "${HOME}/Camp/fomu/"
+}
