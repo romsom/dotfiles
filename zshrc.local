@@ -75,7 +75,7 @@ function passt() {
 }
 
 function ba() {
-    source "${HOME}/Repo/BA/kafl-arm/scripts/ba.sh"
+    source "${HOME}/Repo/BAi4/ba-thesis/scripts/ba.sh"
 }
 
 function bluon() {
