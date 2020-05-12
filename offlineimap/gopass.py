@@ -2,4 +2,4 @@
 
 def pass_from_gopass(path):
     from subprocess import check_output
-    return check_output(['gopass', 'Mail/' + path])
+    return check_output(['gopass', 'show', '-f', 'Mail/' + path])
