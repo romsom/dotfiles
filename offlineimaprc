@@ -3,7 +3,7 @@
 
 [general]
 pythonfile = ~/.offlineimap/gopass.py
-accounts = rsb, kbr, fau, rsbLists, rsbShops, ya
+accounts = kbr, fau, rsbLists, rsbShops, rsbRoman, rsbSocial, ya
 
 [Account fau]
 localrepository = FauLocal
@@ -58,23 +58,6 @@ sslcacertfile = /etc/ca-certificates/extracted/email-ca-bundle.pem
 type = Maildir
 localfolders = ~/mail/kbr
 
-[Account rsb]
-localrepository = rsbLocal
-remoterepository = rsbRemote
-
-[Repository rsbRemote]
-type = IMAP
-remotehost = imap.1blu.de
-remoteuser = c255302_0-roman-rsb
-remotepasseval = pass_from_gopass('roman-rsb')
-starttls = yes
-ssl = yes
-sslcacertfile = /etc/ca-certificates/extracted/email-ca-bundle.pem
-
-[Repository rsbLocal]
-type = Maildir
-localfolders = ~/mail/rsb
-
 [Account rsbLists]
 localrepository = rsbListsLocal
 remoterepository = rsbListsRemote
@@ -108,3 +91,37 @@ sslcacertfile = /etc/ca-certificates/extracted/email-ca-bundle.pem
 [Repository rsbShopsLocal]
 type = Maildir
 localfolders = ~/mail/rsbShops
+
+[Account rsbRoman]
+localrepository = rsbRomanLocal
+remoterepository = rsbRomanRemote
+
+[Repository rsbRomanRemote]
+type = IMAP
+remotehost = imap.1blu.de
+remoteuser = c255302_0-roman-rsb
+remotepasseval = pass_from_gopass('roman-rsb')
+starttls = yes
+ssl = yes
+sslcacertfile = /etc/ca-certificates/extracted/email-ca-bundle.pem
+
+[Repository rsbRomanLocal]
+type = Maildir
+localfolders = ~/mail/rsbRoman
+
+[Account rsbSocial]
+localrepository = rsbSocialLocal
+remoterepository = rsbSocialRemote
+
+[Repository rsbSocialRemote]
+type = IMAP
+remotehost = imap.1blu.de
+remoteuser = c255302_0-rsb-social
+remotepasseval = pass_from_gopass('resonantbytes-social')
+starttls = yes
+ssl = yes
+sslcacertfile = /etc/ca-certificates/extracted/email-ca-bundle.pem
+
+[Repository rsbSocialLocal]
+type = Maildir
+localfolders = ~/mail/rsbSocial
