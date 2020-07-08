@@ -28,6 +28,7 @@ fi
 
 ## Config
 export EDITOR=vim
+export PRINTER="HP_LaserJet_4000_JetDirect"
 
 alias lftp-get='lftp -u romsom -e "mirror -e; exit"'
 alias lftp-put='lftp -u romsom -e "mirror -e -R; exit"'

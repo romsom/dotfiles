@@ -165,7 +165,7 @@
 (evil-mode 1)
 
 ;; printing stuff
-(setq ps-lpr-switches '("-PLaserjet4k-10"))
+(setq ps-lpr-switches '("-PHP_LaserJet_4000_JetDirect"))
 (require 'printing)
 (pr-update-menus)
 
