@@ -33,3 +33,13 @@ for f in "${DOTFILES[@]}"; do
     rm -f "$HOME/.$f"
     ln -s "$PWD/$f" "$HOME/.$f"
 done
+
+echo "linking single config/rc files inside ~/.config/"
+# dotfiles
+CONFIG_DOTFILES=( mimeapps.list )
+for f in "${CONFIG_DOTFILES[@]}"; do
+    # create link inside ~/.config/
+    echo "$f --> $HOME/.config/$f"
+    rm -f "$HOME/.config/$f"
+    ln -s "$PWD/$f" "$HOME/.config/$f"
+done
