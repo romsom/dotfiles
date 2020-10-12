@@ -3,4 +3,5 @@
   :config
   (flycheck-checkpatch-setup)
   (with-eval-after-load 'rust-mode
-	(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)))
+	(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+  (setq flycheck-ghc-args '("-dynamic")))
