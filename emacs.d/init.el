@@ -40,6 +40,14 @@
      (:name "juze" :query "folder:Juze")
      (:name "Inbox" :query "folder:Inbox")
      (:name "Uni" :query "folder:Uni"))))
+ '(org-adapt-indentation nil)
+ '(org-agenda-files '("~/Repo/BAi4/ba-thesis/" "~/Dokumente/org/"))
+ '(org-babel-load-languages
+   '((python . t)
+	 (shell . t)
+	 (emacs-lisp . t)
+	 (perl . t)
+	 (R . t)))
  '(package-selected-packages
    '(use-package undo-tree org-noter-pdftools org-ref org-roam-bibtex smart-tabs-mode auctex helm helm-cscope nlinum dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-checkpatch flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math))
  '(pdf-latex-command "xelatex")
