@@ -41,8 +41,7 @@
      (:name "Inbox" :query "folder:Inbox")
      (:name "Uni" :query "folder:Uni"))))
  '(package-selected-packages
-   (quote
-	(smart-tabs-mode auctex helm helm-cscope nlinum dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-checkpatch flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
+   '(use-package undo-tree org-noter-pdftools org-ref org-roam-bibtex smart-tabs-mode auctex helm helm-cscope nlinum dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-checkpatch flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math))
  '(pdf-latex-command "xelatex")
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
@@ -89,11 +88,17 @@
 
 (load "~/.emacs.d/init-package.el")
 
+;; use-package
+(require 'use-package)
+
 ;; font
 (load "~/.emacs.d/init-font.el")
 
 ;; company
 (load "~/.emacs.d/init-company.el")
+
+;; helm
+(load "~/.emacs.d/init-helm.el")
 
 ;; settings for info mode
 (load "~/.emacs.d/init-info.el")
@@ -113,6 +118,10 @@
 ;; notmuch
 ;;(setq notmuch-init-file "~/.emacs.d/init-notmuch.el")
 (load "~/.emacs.d/init-notmuch.el")
+
+(load "~/.emacs.d/init-org-noter.el")
+(load "~/.emacs.d/init-org-roam.el")
+(load "~/.emacs.d/init-org-ref.el")
 
 ;;;; look and feel
 
@@ -159,16 +168,23 @@
 ;; fontify code in code blocks a.k.a. syntax highlighting in code blocks
 (setq org-src-fontify-natively t)
 (put 'erase-buffer 'disabled nil)
+;; enable org templates, e.g. "<s" + TAB for source block  ;; FIXME: workaround
+;; https://github.com/syl20bnr/spacemacs/issues/11798
+(when (version<= "9.2" (org-version))
+  (require 'org-tempo))
 
 ;; evil mode
-(require 'evil)
-(evil-mode 1)
+(use-package evil
+  :config
+  (evil-mode 1))
 
 ;; printing stuff
-(setq ps-lpr-switches '("-PHP_LaserJet_4000_JetDirect"))
-(require 'printing)
-(pr-update-menus)
+(use-package printing
+  :config
+  (setq ps-lpr-switches '("-PHP_LaserJet_4000_JetDirect"))
+  (pr-update-menus))
 
+;; keep list of recently opened files
 (recentf-mode 1)
 ;; set variables in customize instead:
 ;; (setq recentf-max-menu-items 25)
