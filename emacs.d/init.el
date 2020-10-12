@@ -203,3 +203,4 @@
 (run-at-time nil (* 5 60) (lambda ()
 							(recentf-save-list)
 							(bookmark-save)))
+(server-start)
