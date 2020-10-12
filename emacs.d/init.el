@@ -7,7 +7,7 @@
  '(custom-safe-themes
    '("c59857e3e950131e0c17c65711f1812d20a54b829115b7c522672ae6ba0864cc" "57f8801351e8b7677923c9fe547f7e19f38c99b80d68c34da6fa9b94dc6d3297" default))
  '(package-selected-packages
-   '(use-package undo-tree org-noter-pdftools org-ref org-roam-bibtex smart-tabs-mode auctex helm helm-cscope nlinum dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-checkpatch flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
+   '(org-noter org-roam use-package undo-tree org-noter-pdftools org-ref org-roam-bibtex smart-tabs-mode auctex helm helm-cscope nlinum dts-mode company-ghc company-emoji faustine markdown-mode rust-mode faust-mode flycheck flycheck-checkpatch flycheck-haskell flycheck-ocaml flycheck-pony flycheck-rust company-web yaml-mode pkgbuild-mode notmuch monokai-theme lua-mode latex-preview-pane latex-pretty-symbols latex-math-preview graphviz-dot-mode flycheck-irony evil-tutor evil-org evil-jumper evil-iedit-state dot-mode company-jedi company-arduino cdlatex ac-math)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -54,6 +54,8 @@
 ;;(setq notmuch-init-file "~/.emacs.d/init-notmuch.el")
 (load "~/.emacs.d/init-notmuch.el")
 
+;; pdf-tools for org-pdftools etc.
+(pdf-tools-install)
 ;; org
 (load "~/.emacs.d/init-org.el")
 (load "~/.emacs.d/init-org-noter.el")
@@ -75,6 +77,8 @@
 (menu-bar-mode -1)
 ;; enable linum-mode
 (global-nlinum-mode t)
+(add-hook 'pdf-view-mode-hook (lambda ()
+	  (nlinum-mode -1)))
 ;; column-number-mode to show column number in bottom bar
 (column-number-mode)
 ;; highlight current line

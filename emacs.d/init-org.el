@@ -15,3 +15,13 @@
 ;; https://github.com/syl20bnr/spacemacs/issues/11798
 (when (version<= "9.2" (org-version))
   (require 'org-tempo))
+
+;; org-pdftools
+(use-package org-pdftools
+  :hook (org-mode . org-pdftools-setup-link))
+
+(use-package org-noter-pdftools
+  :after org-noter
+  :config
+  (with-eval-after-load 'pdf-annot
+    (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
