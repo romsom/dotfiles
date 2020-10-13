@@ -25,6 +25,10 @@
 
 ;; use-package
 (require 'use-package)
+;; enable this when emacs loading takes too long
+;; note: docs say that packages used without implicit autoload (e.g., :bind, :hook) might not load at all, so manually specifying ":defer t" might be the better choice
+;; see README: https://github.com/jwiegley/use-package
+;;(setq use-package-always-defer 1)
 
 ;; font
 (load "~/.emacs.d/init-font.el")
