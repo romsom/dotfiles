@@ -3,12 +3,13 @@
 ;; get a list of all available fonts with (font-family-list)
 (defun get-preferred-font ()
   "Find the first available font from a list of preferred fonts and return it with an appropriate size"
-  (let ((fontlist '(
-		    ("Fira Mono" . 100)
-		    ("monospace" . 100)
-		    ("Ubuntu Mono" . 110)
-		    ("Anonymous Pro" . 120)
-		    )))
+  (let ((fontlist
+		 '(("Fira Code" . 100)
+		   ("Fira Mono" . 100)
+		   ("monospace" . 100)
+		   ("Ubuntu Mono" . 110)
+		   ("Anonymous Pro" . 120)
+		   )))
     (while (not (or (not (car fontlist)) (find-font-by-name (car (car fontlist)))))
       (pop fontlist))
     (car fontlist)))
