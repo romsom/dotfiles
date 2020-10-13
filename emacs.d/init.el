@@ -55,7 +55,9 @@
 (load "~/.emacs.d/init-notmuch.el")
 
 ;; pdf-tools for org-pdftools etc.
-(pdf-tools-install)
+(use-package pdf-tools
+  :config
+  (pdf-tools-install))
 ;; org
 (load "~/.emacs.d/init-org.el")
 (load "~/.emacs.d/init-org-noter.el")
