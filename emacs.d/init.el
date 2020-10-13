@@ -89,6 +89,10 @@
 (show-paren-mode)
 ;; activate smart-tabs-mode for certain languages
 (smart-tabs-insinuate 'c)
+;; enable undo-tree after evil-mode update doesn't do so automatically anymor
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
 
 ;; scroll one line at a time (less "jumpy" than defaults)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
