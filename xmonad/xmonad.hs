@@ -52,7 +52,8 @@ myManageHook = composeAll . concat $
         myIgnores       = ["panel", "stalonetray", "trayer"] -- sticky, respect geometry
         myFloatsByClass = [ "feh", "GIMP", "gimp", "gimp-2.4", "kcalc"
                           , "qemu", "qemu-system-aarch64"
-                          , "scummvm", "MediathekView"
+                          , "scummvm", "MediathekView", "Zenity"
+                          , "residualvm", "xpra"
                           ] -- xprop WM_CLASS
         myFloatsByTitle = [] 
         myGames = ["Steam", "Lutris", "Gamehub", "multimc", "MultiMC5"]
