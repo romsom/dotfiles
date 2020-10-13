@@ -1,11 +1,11 @@
 (use-package helm
-  :hook
-  ;; Enable helm-cscope-mode
-  (c-mode . helm-cscope-mode)
-  (c++-mode . helm-cscope-mode))
+ )
 
 (use-package helm-cscope
   :after helm
+  :hook
+  ;; Enable helm-cscope-mode
+  ((c-mode c++-mode) . (lambda () (helm-cscope-mode 1)))
   :bind
   (:map helm-cscope-mode-map
 		("M-t" . helm-cscope-find-this-symbol)
