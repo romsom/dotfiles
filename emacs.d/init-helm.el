@@ -1,7 +1,8 @@
 (use-package helm
- )
+  :ensure t)
 
 (use-package helm-cscope
+  :ensure t
   :after helm
   :hook
   ;; Enable helm-cscope-mode

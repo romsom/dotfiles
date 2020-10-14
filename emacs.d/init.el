@@ -60,6 +60,7 @@
 
 ;; pdf-tools for org-pdftools etc.
 (use-package pdf-tools
+  :ensure t
   :config
   (pdf-tools-install))
 ;; org
@@ -95,6 +96,7 @@
 (smart-tabs-insinuate 'c)
 ;; enable undo-tree after evil-mode update doesn't do so automatically anymor
 (use-package undo-tree
+  :ensure t
   :config
   (global-undo-tree-mode))
 
@@ -126,6 +128,7 @@
 
 ;; evil mode
 (use-package evil
+  :ensure t
   :config
   (evil-mode 1))
 

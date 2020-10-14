@@ -19,9 +19,11 @@
 
 ;; org-pdftools
 (use-package org-pdftools
+  :ensure t
   :hook (org-mode . org-pdftools-setup-link))
 
 (use-package org-noter-pdftools
+  :ensure t
   :after org-noter
   :config
   (with-eval-after-load 'pdf-annot

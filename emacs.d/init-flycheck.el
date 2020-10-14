@@ -1,4 +1,5 @@
 (use-package flycheck
+  :ensure t
   :hook ((after-init . global-flycheck-mode))
   :config
   (flycheck-checkpatch-setup)

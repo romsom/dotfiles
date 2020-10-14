@@ -1,4 +1,5 @@
 (use-package org-ref
+  :ensure t
   :after helm
   ;; TODO add global bibliography if needed
   ;;:custom

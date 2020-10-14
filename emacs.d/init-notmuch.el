@@ -1,5 +1,6 @@
 (use-package notmuch
-:custom
+  :ensure t
+  :custom
  (notmuch-search-oldest-first nil)
  (message-sendmail-envelope-from 'header)
  (mail-specify-envelope-from 'header)

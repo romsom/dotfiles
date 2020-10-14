@@ -3,6 +3,7 @@
 ;; To use jedi mode, install company-jedi in emacs
 ;; and jedi, virtualenv and epc either systemwide or using pip
 (use-package company
+  :ensure t
   :config
   (defun my-company-python-hook ()
 	(company-mode)

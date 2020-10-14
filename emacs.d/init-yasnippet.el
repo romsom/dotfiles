@@ -1,5 +1,6 @@
 ;; start yasnippets - snippets like main, while with condition etc.
 (use-package yasnippet
+  :ensure t
   :config
 ;; don't make it global or tab-completion in term won't work
   (yas-global-mode 1)

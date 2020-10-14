@@ -9,7 +9,7 @@
 ;; but require latex-preview-pane complains without it
 (package-initialize)
 
-;; package maintainance stuff, may some day be unneccessary if I decide to switch to use-package
+;; package maintainance stuff, may now be unneccessary that I switched to use-package but it can stay here for now
 ;; [[http://www.flycheck.org/en/latest/user/installation.html#flycheck-installation]]
 (defun utils:installed-packages ()
   "List names of installed packages."
