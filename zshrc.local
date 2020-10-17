@@ -162,6 +162,15 @@ function fomu() {
 	cd "${HOME}/Camp/fomu/"
 }
 
+function find-multifile-cue-sheets {
+    if [[ "x$1" == "x" ]] ; then
+	root='.'
+    else
+	root="$1"
+    fi
+    find "$root" -iname '*.cue' -print0 | xargs -0 -n1 perl -e 'my $n = $ARGV[0]; my $cnt=0; while (<>) { $cnt += 1 if /FILE/ } print "$n\0" if $cnt > 1;' | xargs -0 -n1 echo "multi-file cue-sheet: "
+}
+
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
