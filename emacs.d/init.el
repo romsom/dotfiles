@@ -133,7 +133,12 @@
 (use-package evil
   :ensure t
   :config
-  (evil-mode 1))
+  (evil-mode 1)
+  :custom
+  (evil-undo-system 'undo-tree)
+  (evil-want-fine-undo t)
+  (evil-indent-convert-tabs nil))
+
 
 ;; printing stuff
 (use-package printing
