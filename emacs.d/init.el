@@ -62,7 +62,10 @@
 (use-package pdf-tools
   :ensure t
   :config
-  (pdf-tools-install))
+  (pdf-tools-install)
+  :custom
+  ;; open pdfs scaled to fit page
+  (pdf-view-display-size 'fit-page))
 ;; org
 (load "~/.emacs.d/init-org.el")
 (load "~/.emacs.d/init-org-noter.el")
