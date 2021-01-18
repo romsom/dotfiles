@@ -143,6 +143,14 @@ function pg() {
 	grep --color=always $@ | less -R
 }
 
+function mv-by-regex() {
+    re="$1"
+    dir="$2"
+    shift
+    shift
+    find "$dir" "$@" -print0 | perl -0 -e 'use Path::Tiny; my $moves={}; while(<>) {my $src=$_; my $dest=$src; $dest=~'"$re"'; $moves->{$src}=$dest unless $src eq $dest;} print "Moving files:\n"; foreach (keys %$moves) {print "$_ -> $moves->{$_}\n"; my $p=path($_); $p->move($moves->{$_});}'
+}
+
 # set color of username in prompt to green; see grml_zshrc
 zstyle ':prompt:grml:*:items:user' pre '%F{blue}'
 
