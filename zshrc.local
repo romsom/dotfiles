@@ -135,7 +135,7 @@ function send-files() {
 function recv-files() {
 	target_host="$1"
 	target_port="$2"
-	echo "Thanks!" | nc -N "$target_host" "$target_port" | pv | tar -xvf-
+	echo "Thanks!" | nc -v -N "$target_host" "$target_port" | pv | tar -xvf-
 }
 
 # grep with colorized output in less
