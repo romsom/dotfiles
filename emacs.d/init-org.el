@@ -10,7 +10,11 @@
 (use-package org
   :bind
   (:map org-mode-map
-	("C-c a e" . my:org-latex-export-latex-body)))
+	("C-c a e" . my:org-latex-export-latex-body))
+  :custom
+  (org-latex-prefer-user-labels t)  ;; allow setting custom labels to refer to sections/items in other org files when exporting with body-only and building a larger document from multiple sources
+  (org-latex-caption-above nil)
+  )
 ;; (require 'org)
 ;; (define-key org-mode-map (kbd "C-c a e") 'my:org-latex-export-latex-body)
 
