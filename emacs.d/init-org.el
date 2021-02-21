@@ -34,7 +34,9 @@
 
 ;; enable org templates, e.g. "<s" + TAB for source block  ;; FIXME: workaround
 ;; https://github.com/syl20bnr/spacemacs/issues/11798
-(when (version<= "9.2" (org-version))
+(when (or
+       (string= "" (org-version))
+       (version<= "9.2" (org-version)))
   (require 'org-tempo))
 
 ;; org-pdftools
