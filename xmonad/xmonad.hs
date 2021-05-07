@@ -1,11 +1,13 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import qualified XMonad.StackSet as W
-
+import XMonad.Hooks.ManageHelpers
 import XMonad.Util.EZConfig -- for keybindings
+import XMonad.Hooks.EwmhDesktops(ewmh) -- fullscreen applications (e.g., sdl2 games)
+-- import XMonad.Hooks.EwmhDesktops(fullscreenEventHook,ewmh) -- is fullscreenEventHook necessary?
 
 -- The main function.
-main = xmonad =<< (statusBar myBar myPP toggleStrutsKey $ myKeybindings myConfig)
+main = xmonad =<< (statusBar myBar myPP toggleStrutsKey $ ewmh $ myKeybindings myConfig)
 
 -- Command to launch the bar.
 myBar = "xmobar"
@@ -36,7 +38,8 @@ myKeybindings = \c -> additionalKeysP c $
 -- manage workspaces
 myManageHook :: ManageHook
 myManageHook = composeAll . concat $
-    [ [ className   =? c                 --> doFloat | c <- myFloatsByClass]
+    [ [ isFullscreen --> doFullFloat]
+    , [ className   =? c                 --> doFloat | c <- myFloatsByClass]
     , [ title       =? t                 --> doFloat | t <- myFloatsByTitle]
     , [ resource    =? r                 --> doIgnore | r <- myIgnores]
     , [ className   =? g                 --> doShift "5:games" | g <- myGames]
