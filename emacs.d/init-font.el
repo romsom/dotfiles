@@ -34,7 +34,11 @@
 ;; apply font from font-preferred-font and scaling from font-scaling-factor
 (defun font-apply-font ()
   (let ((font-name (car font-preferred-font)) (font-size (cdr font-preferred-font)))
-    (set-face-attribute 'default nil :font font-name :height (round (* font-scaling-factor font-size)))))
+    (set-face-attribute 'default nil :font font-name :height (round (* font-scaling-factor font-size)))
+    (if (>= emacs-major-version 27)
+	(set-fontset-font t '(#x1f000 . #x1faff)
+			  (font-spec :family "Noto Color Emoji")))
+    ))
 
 ;; scale font-scaling-factor with factor
 (defun font-scale-scaling (&optional factor)
