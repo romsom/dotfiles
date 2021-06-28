@@ -35,6 +35,9 @@
 (defun font-apply-font ()
   (let ((font-name (car font-preferred-font)) (font-size (cdr font-preferred-font)))
     (set-face-attribute 'default nil :font font-name :height (round (* font-scaling-factor font-size)))
+    ;; set font for emoji
+    ;; using the unicode-fonts package might be better though
+    ;; https://www.masteringemacs.org/article/unicode-ligatures-color-emoji
     (if (>= emacs-major-version 27)
 	(set-fontset-font t '(#x1f000 . #x1faff)
 			  (font-spec :family "Noto Color Emoji")))
