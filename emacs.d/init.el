@@ -95,9 +95,17 @@
 (global-hl-line-mode)
 ;; highlight matching parens
 (show-paren-mode)
+;; c-style
+(setq c-basic-offset 8
+      tab-width 8
+      c-default-style
+      '((java-mode . "java")
+	(awk-mode . "awk")
+	(other . "linux")))
+
 ;; activate smart-tabs-mode for certain languages
-(smart-tabs-insinuate 'c)
-;; enable undo-tree after evil-mode update doesn't do so automatically anymor
+(smart-tabs-insinuate 'c 'java)
+;; enable undo-tree after evil-mode update doesn't do so automatically anymore
 (use-package undo-tree
   :ensure t
   :config
@@ -111,14 +119,6 @@
 
 
 ;;;; small stuff
-
-;; c-style
-(setq c-basic-offset 4
-	  tab-width 4
-	  c-default-style
-	  '((java-mode . "java")
-		(awk-mode . "awk")
-		(other . "linux")))
 
 ; keybinding for iedit mode
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
