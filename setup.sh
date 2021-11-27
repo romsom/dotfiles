@@ -48,3 +48,12 @@ for f in "${CONFIG_DOTFILES[@]}"; do
     rm -f "$HOME/.config/$f"
     ln -s "$PWD/$f" "$HOME/.config/$f"
 done
+
+echo "linking desktop files inside ~/.local/share/applications/"
+# dotfiles
+DESKTOP_FILES=( emacsclient.desktop )
+for f in "${DESKTOP_FILES[@]}"; do
+    echo "$f --> $HOME/.local/share/applications/$f"
+    rm -f "$HOME/.local/share/applications/$f"
+    ln -s "$PWD/$f" "$HOME/.local/share/applications/$f"
+done
