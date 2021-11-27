@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: rvavr-instr
+# key: ins
+# --
+// -----------------------------------------------------------------------------
+pub struct $1 {
+$0
+}
+
+impl InstructionExecute for $1 {
+    fn execute(&self, cpu: & mut CPU) {
+
+    }
+}
+
+impl ToString for $1 {
+    fn to_string(&self) -> String {
+
+    }
+}
