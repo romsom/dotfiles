@@ -1,5 +1,6 @@
 #!/bin/bash
-
+mkfifo -m 600 $XDG_RUNTIME_DIR/msg
+~/Repo/romsom/scripts/notifications.py > $XDG_RUNTIME_DIR/msg &
 firefox &
 # spawn some terms
 termite --class 'term-main' &
