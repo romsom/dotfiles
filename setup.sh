@@ -21,6 +21,11 @@ for dir in "${DIRS[@]}"; do
      rm -f "$link_dir/$(basename "$file")"
      ln -s "$PWD"/"$file" "$link_dir/$(basename "$file")"
     fi
+    if [[ -d "$file" ]]; then
+      echo "$link_dir/$(basename "$file") (directory)"
+     rm -rf "${link_dir:?}/$(basename "$file")"
+     ln -s "$PWD"/"$file" "${link_dir:?}/$(basename "$file")"
+    fi
   done
 done
 
