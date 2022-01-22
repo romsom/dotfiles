@@ -51,9 +51,10 @@ done
 
 echo "linking desktop files inside ~/.local/share/applications/"
 # dotfiles
-DESKTOP_FILES=( emacsclient.desktop )
+DESKTOP_FILES=( emacsclient.desktop emacsclient-mail.desktop notmuch-emacsclient-mua.desktop )
 for f in "${DESKTOP_FILES[@]}"; do
     echo "$f --> $HOME/.local/share/applications/$f"
     rm -f "$HOME/.local/share/applications/$f"
     ln -s "$PWD/$f" "$HOME/.local/share/applications/$f"
 done
+update-desktop-database "${HOME}/.local/share/applications/"

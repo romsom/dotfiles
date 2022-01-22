@@ -12,6 +12,7 @@ application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 application/pdf=org.gnome.Evince.desktop;
 video/mp4=vlc.desktop;
+x-scheme-handler/mailt=emacsclient-mail.desktop;
 
 [Added Associations]
 application/x-awk=org.gnome.gedit.desktop;

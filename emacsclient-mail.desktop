@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Send Mail With Emacs (Client)
+GenericName=Email Client
+Comment=Send email from emacs server window
+Exec=emacsclient -c --eval "(browse-url-mail \""%u"\")"
+MimeType=x-scheme-handler/mailto;
+Icon=emacs
+Type=Application
+Terminal=false
+Categories=Office;Email;
+StartupWMClass=Emacs
+Keywords=email;
