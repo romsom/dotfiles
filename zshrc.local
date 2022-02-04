@@ -28,7 +28,7 @@ if [[ "$TERM" == "xterm-termite" ]]; then
 fi
 
 ## Config
-export EDITOR=vim
+export EDITOR="emacsclient -c -nw"
 export PRINTER="HP_LaserJet_4000_JetDirect"
 
 alias lftp-get='lftp -u romsom -e "mirror -e; exit"'
