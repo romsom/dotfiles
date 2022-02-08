@@ -2,9 +2,10 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import qualified XMonad.StackSet as W
 import XMonad.Hooks.ManageHelpers
-import XMonad.Util.EZConfig -- for keybindings
+import XMonad.Util.EZConfig(additionalKeysP) -- for keybindings
 import XMonad.Hooks.EwmhDesktops(ewmh) -- fullscreen applications (e.g., sdl2 games)
 -- import XMonad.Hooks.EwmhDesktops(fullscreenEventHook,ewmh) -- is fullscreenEventHook necessary?
+import XMonad.Actions.PhysicalScreens(viewScreen,sendToScreen) -- use correct ordering of screens
 
 -- The main function.
 main = xmonad =<< (statusBar myBar myPP toggleStrutsKey $ ewmh $ myKeybindings myConfig)
@@ -33,7 +34,19 @@ myConfig = def
 myKeybindings = \c -> additionalKeysP c $
   [ ("M-S-s", spawn "i3lock && systemctl suspend")
   , ("M-S-l", spawn "i3lock -d -I5 ")
+  -- rebind screen selection keys to use PhysicalScreens
+  , ("M-w", viewScreen def 0)
+  , ("M-e", viewScreen def 1)
+  , ("M-r", viewScreen def 2)
+  , ("M-S-w", sendToScreen def 0)
+  , ("M-S-e", sendToScreen def 1)
+  , ("M-S-r", sendToScreen def 2)
   ]
+
+-- reference for PhysicalScreens from https://xiangji.me/2018/11/19/my-xmonad-configuration/#xmonadactionsphysicalscreens
+-- physicalScreenKeys = [((modm .|. mask, key), f sc)
+--     | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+--     , (f, mask) <- [(viewScreen def, 0), (sendToScreen def, shiftMask)]]
 
 -- manage workspaces
 myManageHook :: ManageHook
