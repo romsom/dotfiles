@@ -58,6 +58,14 @@
   (interactive)
   (font-scale-scaling (/ 1.0 1.1)))
 
+;; also scale org latex fragments
+(defun update-org-latex-fragments ()
+  (org-latex-preview '(64))
+  (plist-put org-format-latex-options :scale text-scale-mode-amount)
+  (org-latex-preview '(16)))
+(add-hook 'text-scale-mode-hook 'update-org-latex-fragments)
+
+
 (define-key global-map (kbd "C-+") 'font-increase-scaling)
 (define-key global-map (kbd "C--") 'font-decrease-scaling)
 (define-key global-map (kbd "C-=") 'reset-font)
