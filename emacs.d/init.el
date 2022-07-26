@@ -98,12 +98,28 @@
 ;; highlight matching parens
 (show-paren-mode)
 ;; c-style
-(setq c-basic-offset 8
-      tab-width 8
-      c-default-style
+(c-add-style "etxzat-c-style"
+	     '("bsd"
+	       (c-basic-offset . 4)
+	       (tab-width . 4)))
+
+(c-add-style "juce"
+	     '("bsd"
+	       (c-basic-offset . 4)
+	       (tab-width . 4)
+	       (indent-tabs-mode . nil)))
+
+(c-add-style "hise"
+	     '("juce"
+	       (c-offsets-alist
+		. ((innamespace . [0])))))
+
+(setq c-default-style
       '((java-mode . "java")
 	(awk-mode . "awk")
-	(other . "linux")))
+	(c-mode . "etxzat-c-style")
+	(c++-mode . "etxzat-c-style")))
+	;; (c++-mode . "hise-c-style")))
 
 ;; activate smart-tabs-mode for certain languages
 (smart-tabs-insinuate 'c 'java)
