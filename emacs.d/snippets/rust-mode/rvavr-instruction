@@ -13,8 +13,8 @@ impl InstructionExecute for $1 {
     }
 }
 
-impl ToString for $1 {
-    fn to_string(&self) -> String {
+impl Disassemble for $1 {
+     fn disassemble(&self) -> String {
 
-    }
+     }
 }
