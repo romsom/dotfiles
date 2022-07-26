@@ -54,7 +54,7 @@
 ;;(load "~/.emacs.d/init-ac.el")
 
 ;; yasnippet
-;(load "~/.emacs.d/init-yasnippet.el")
+(load "~/.emacs.d/init-yasnippet.el")
 
 ;; notmuch
 ;;(setq notmuch-init-file "~/.emacs.d/init-notmuch.el")
