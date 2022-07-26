@@ -122,7 +122,7 @@
 	;; (c++-mode . "hise-c-style")))
 
 ;; activate smart-tabs-mode for certain languages
-(smart-tabs-insinuate 'c 'java)
+(smart-tabs-insinuate 'c 'c++ 'java)
 ;; enable undo-tree after evil-mode update doesn't do so automatically anymore
 (use-package undo-tree
   :ensure t
