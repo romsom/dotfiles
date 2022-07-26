@@ -48,7 +48,8 @@
   (prog1
       (setq font-scaling-factor
 	    (* font-scaling-factor factor))
-    (font-apply-scaling)))
+    (font-apply-scaling)
+    (update-org-latex-fragments)))
 
 (defun font-increase-scaling ()
   (interactive)
@@ -61,7 +62,7 @@
 ;; also scale org latex fragments
 (defun update-org-latex-fragments ()
   (org-latex-preview '(64))
-  (plist-put org-format-latex-options :scale text-scale-mode-amount)
+  (plist-put org-format-latex-options :scale (* text-scale-mode-amount font-scaling-factor))
   (org-latex-preview '(16)))
 (add-hook 'text-scale-mode-hook 'update-org-latex-fragments)
 
