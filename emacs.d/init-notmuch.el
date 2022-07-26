@@ -24,7 +24,7 @@
  ;; (notmuch-fcc-dirs '((".*" . "Defunct/Sent")))
  (notmuch-show-indent-messages-width 4)
  (notmuch-saved-searches
-  '((:name "inbox" :query "tag:inbox" :key "i")
+  '((:name "inbox" :query "tag:inbox AND NOT folder:/.*Bulk.*/" :key "i")
 	(:name "unread" :query "tag:unread" :key "u")
 	(:name "flagged" :query "tag:flagged" :key "f")
 	(:name "sent" :query "tag:sent" :key "t")
@@ -32,4 +32,6 @@
 	(:name "all mail" :query "*" :key "a")
 	(:name "juze" :query "folder:Juze")
 	(:name "Inbox" :query "folder:Inbox")
-	(:name "Uni" :query "folder:Uni"))))
+	(:name "Uni" :query "folder:Uni")
+	(:name "Spam" :query "tag:inbox AND folder:/.*Bulk.*/" :key "s")
+	)))
