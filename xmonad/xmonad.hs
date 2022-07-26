@@ -69,7 +69,7 @@ myManageHook = composeAll . concat $
         myFloatsByClass = [ "feh", "GIMP", "gimp", "gimp-2.4", "kcalc"
                           , "qemu", "qemu-system-aarch64"
                           , "scummvm", "MediathekView", "Zenity"
-                          , "residualvm", "xpra"
+                          , "residualvm", "xpra", "Projucer"
                           ] -- xprop WM_CLASS
         myFloatsByTitle = [] 
         myGames = ["Steam", "Lutris", "Gamehub", "multimc", "MultiMC5"]
