@@ -181,4 +181,5 @@
 (run-at-time nil (* 5 60) (lambda ()
 			    (recentf-save-list)
 			    (bookmark-save)))
+(add-to-list 'tramp-default-user-alist '("ssh" nil nil))
 (server-start)
