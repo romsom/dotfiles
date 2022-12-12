@@ -124,8 +124,14 @@
 	       (c-offsets-alist
 		. ((innamespace . [0])))))
 
+(c-add-style "java-spaces-only"
+	     '("java"
+	       (c-basic-offset . 4)
+	       (tab-width . 4)
+	       (indent-tabs-mode . nil)))
+
 (setq c-default-style
-      '((java-mode . "java")
+      '((java-mode . "java-spaces-only")
 	(awk-mode . "awk")
 	(c-mode . "etxzat-c-style")
 	(c++-mode . "etxzat-c-style")
