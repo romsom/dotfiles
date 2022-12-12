@@ -1,4 +1,4 @@
-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { font = "xft:Fira Mono:size=8:bold:antialias=true"
        , additionalFonts = []
        , borderColor = "black"
        , border = TopB

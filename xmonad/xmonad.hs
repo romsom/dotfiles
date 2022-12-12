@@ -21,7 +21,7 @@ myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myConfig = def
-       { terminal   = "termite"
+       { terminal   = "kitty"
        , modMask    = mod4Mask
        -- workspaces
        , workspaces = ["1:term", "2:edit", "3:web", "4:mail", "5:games"] ++ map show [6 .. 7 :: Int] ++ ["8:media_players", "9:audio_controls"]
@@ -62,6 +62,7 @@ myManageHook = composeAll . concat $
     , [ title       =? "emacs-main"      --> doShift "2:edit" ]
     , [ className   =? "Firefox"         --> doShift "3:web" ]
     , [ className   =? "firefox"         --> doShift "3:web" ]
+    , [ className   =? "Firefox-esr"     --> doShift "3:web" ]
     , [ className   =? "term-mutt"       --> doShift "4:mail" ]
     ]
     where

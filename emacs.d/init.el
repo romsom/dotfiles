@@ -102,12 +102,21 @@
 (c-add-style "etxzat-c-style"
 	     '("bsd"
 	       (c-basic-offset . 4)
+	       (js-indent-level . 4)
 	       (tab-width . 4)))
+
+(c-add-style "tabs-8-style"
+	     '("bsd"
+	       (c-basic-offset . 8)
+	       (tab-width . 8)
+	       (js-indent-level . 8)
+	       (indent-tabs-mode . t)))
 
 (c-add-style "juce"
 	     '("bsd"
 	       (c-basic-offset . 4)
 	       (tab-width . 4)
+	       (js-indent-level . 4)
 	       (indent-tabs-mode . nil)))
 
 (c-add-style "hise"
@@ -119,11 +128,12 @@
       '((java-mode . "java")
 	(awk-mode . "awk")
 	(c-mode . "etxzat-c-style")
-	(c++-mode . "etxzat-c-style")))
+	(c++-mode . "etxzat-c-style")
+	(js-mode . "tabs-8-style")))
 	;; (c++-mode . "hise-c-style")))
 
 ;; activate smart-tabs-mode for certain languages
-(smart-tabs-insinuate 'c 'c++ 'java)
+(smart-tabs-insinuate 'c 'c++ 'java 'javascript)
 ;; enable undo-tree after evil-mode update doesn't do so automatically anymore
 (use-package undo-tree
   :ensure t
