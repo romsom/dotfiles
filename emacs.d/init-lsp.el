@@ -27,3 +27,7 @@
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   (require 'dap-cpptools)
   (yas-global-mode))
+
+(use-package lsp-ui)
+(require 'lsp-java)
+(add-hook 'java-mode-hook #'lsp)
