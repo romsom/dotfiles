@@ -46,6 +46,9 @@ alias eac='WINEPREFIX=~/Wineprefixes/eac wine "C:\\Program Files (x86)\\Exact Au
 alias tvon='xrandr --output VGA-1 --off --output LVDS-1 --primary --output HDMI-1 --mode 1920x1080 --left-of LVDS-1'
 alias tvoff='xrandr --output HDMI-1 --off --output VGA-1 --primary --mode 1920x1200 --left-of LVDS-1'
 
+alias edit="${EDITOR}"
+alias ec="emacsclient -n"
+
 # git aliases
 alias gs='git status'
 alias gd='git diff'
