@@ -29,6 +29,7 @@ fi
 
 ## Config
 export EDITOR="emacsclient -c -nw"
+export PAGER="less -SR"
 export PRINTER="HP_LaserJet_4000_JetDirect"
 
 alias lftp-get='lftp -u romsom -e "mirror -e; exit"'
