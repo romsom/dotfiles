@@ -1,6 +1,6 @@
 #!/bin/bash
-# mkfifo -m 600 $XDG_RUNTIME_DIR/msg
-# ~/Repo/romsom/scripts/notifications.py > $XDG_RUNTIME_DIR/msg &
+mkfifo -m 600 $XDG_RUNTIME_DIR/msg
+~/Repo/romsom/scripts/notifications.py > $XDG_RUNTIME_DIR/msg &
 firefox &
 # spawn some terms
 kitty --class 'term-main' &
