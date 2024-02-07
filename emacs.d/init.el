@@ -140,6 +140,10 @@
 	(js-mode . "tabs-8-style")))
 	;; (c++-mode . "hise-c-style")))
 
+(add-hook 'rust-mode-hook
+	  (lambda ()
+	    (indent-tabs-mode -1)))
+
 ;; activate smart-tabs-mode for certain languages
 (smart-tabs-insinuate 'c 'c++ 'java 'javascript)
 ;; enable undo-tree after evil-mode update doesn't do so automatically anymore
