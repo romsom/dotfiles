@@ -145,6 +145,9 @@
 	  (lambda ()
 	    (indent-tabs-mode -1)))
 
+(setq vhdl-basic-offset 8)
+(setq vhdl-indent-tabs-mode 't)
+
 ;; activate smart-tabs-mode for certain languages
 (smart-tabs-insinuate 'c 'c++ 'java 'javascript)
 ;; enable undo-tree after evil-mode update doesn't do so automatically anymore
