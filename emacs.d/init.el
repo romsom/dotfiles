@@ -90,10 +90,11 @@
 (tool-bar-mode -1)
 ;; disable menu-bar-mode
 (menu-bar-mode -1)
-;; enable linum-mode
-(global-nlinum-mode t)
-(add-hook 'pdf-view-mode-hook (lambda ()
-	  (nlinum-mode -1)))
+;; enable line numbers
+(global-display-line-numbers-mode 1)
+;; Alternatively, to use it only in programming modes:
+;; (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+
 ;; column-number-mode to show column number in bottom bar
 (column-number-mode)
 ;; highlight current line
